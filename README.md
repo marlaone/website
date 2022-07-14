@@ -15,6 +15,7 @@ This is the codebase for my [Website](https://marla.one).
   - [bluemonday](https://github.com/microcosm-cc/bluemonday) - html sanitizer to keep custom web components from markdown
 - [fiber](https://github.com/gofiber/fiber) - http server for static content
 - [go-chi](https://github.com/go-chi/chi) - http server for graphql api
+  - *Maybe we can stay with fiber for graphql? https://github.com/Just4Ease/fiber-gqlgen* 
 - [gqlgen](https://github.com/99designs/gqlgen) - graphql server generator
 - [ent](https://github.com/ent/ent) - entity framework
   - [PostgreSQL](https://www.postgresql.org/) - relational database
