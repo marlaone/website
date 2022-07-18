@@ -13,9 +13,7 @@ This is the codebase for my [Website](https://marla.one).
   - [goldmark](https://github.com/yuin/goldmark) - markdown parser
   - [goldmark-meta](https://github.com/yuin/goldmark-meta) - meta data from markdown
   - [bluemonday](https://github.com/microcosm-cc/bluemonday) - html sanitizer to keep custom web components from markdown
-- [fiber](https://github.com/gofiber/fiber) - http server for static content
-- [go-chi](https://github.com/go-chi/chi) - http server for graphql api
-  - *Maybe we can stay with fiber for graphql? https://github.com/Just4Ease/fiber-gqlgen* 
+- [go-chi](https://github.com/go-chi/chi) - http server for static content and graphql api
 - [gqlgen](https://github.com/99designs/gqlgen) - graphql server generator
 - [ent](https://github.com/ent/ent) - entity framework
   - [PostgreSQL](https://www.postgresql.org/) - relational database
@@ -24,6 +22,7 @@ This is the codebase for my [Website](https://marla.one).
 - [testify](https://github.com/stretchr/testify) - unit test framework
 - [gocron](https://github.com/go-co-op/gocron) - for background tasks
 - [cobra](https://github.com/spf13/cobra) - cli applications
+- [zap](https://github.com/uber-go/zap) - B L A Z I N G _ F A S T logger
 - Social Media APIs
   - [YouTube](https://developers.google.com/youtube/v3/code_samples/go) - fetch videos
   - [Twitch](https://github.com/nicklaw5/helix) - latest VODs
