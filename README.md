@@ -23,6 +23,7 @@ This is the codebase for my [Website](https://marla.one).
 - [gocron](https://github.com/go-co-op/gocron) - for background tasks
 - [cobra](https://github.com/spf13/cobra) - cli applications
 - [zap](https://github.com/uber-go/zap) - B L A Z I N G _ F A S T logger
+- [blocks](https://github.com/kataras/blocks/blob/main/blocks.go) - html template engine
 - Social Media APIs
   - [YouTube](https://developers.google.com/youtube/v3/code_samples/go) - fetch videos
   - [Twitch](https://github.com/nicklaw5/helix) - latest VODs
