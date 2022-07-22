@@ -6,6 +6,6 @@ layout: home
 
 Test
 
-<marla-test>
+<marla-element>
     Test Component
-</marla-test>
+</marla-element>

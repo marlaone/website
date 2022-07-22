@@ -36,6 +36,7 @@ func (s *HttpServer) Serve() error {
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
 
+	r.Handle("/_marla/*", http.StripPrefix("/_marla/", http.FileServer(http.Dir("./web/dist"))))
 	r.Handle("/*", contents.Handler(s.logger))
 
 	return http.ListenAndServe(":"+viper.GetString("http.port"), r)
