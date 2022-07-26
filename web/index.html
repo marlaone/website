@@ -6,71 +6,95 @@
     <title>Vite + Lit + TS</title>
     <script type="module" src="/src/index.ts"></script>
   </head>
-  <body>
-    <nav class="navbar relative z-50 bg-base-100">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-          </label>
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a>Item 1</a></li>
-            <li tabindex="0">
-              <a class="justify-between">
-                Parent
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-              </a>
-              <ul class="bg-base-100 p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
+  <body class="bg-base-200">
+    <div class="bg-opacity-60 glass">
+        <nav class="navbar relative z-50 h-20">
+          <div class="navbar-start">
+            <!--<div class="dropdown">
+              <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </label>
+              <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>Item 1</a></li>
+                <li tabindex="0">
+                  <a class="justify-between">
+                    Parent
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+                  </a>
+                  <ul class="bg-base-100 p-2">
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                  </ul>
+                </li>
+                <li><a>Item 3</a></li>
               </ul>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-        </div>
-        <a class="btn btn-ghost normal-case text-xl">Marla.ONE</a>
-      </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
-          <li><a>Item 1</a></li>
-          <li tabindex="0">
-            <a>
-              Parent
-              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+            </div>--> 
+            <a href="/" class="inline-flex align-middle justify-center items-center cursor-pointer p-4 font-monoglyceride normal-case text-xl">
+              <img src="./src/assets/images/logo.svg" class="h-12 mr-4" />
+              Marla.ONE
             </a>
-            <ul class="  p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li><a>Item 3</a></li>
-        </ul>
-      </div>
-      <div class="navbar-end">
-        <a class="btn">Get started</a>
-      </div>
-    </nav>
-    <header class="mb-12">
-      <section class="hero h-96" style="background-image: url(https://placeimg.com/1000/800/arch);">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-            <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button class="btn btn-primary">Get Started</button>
           </div>
-        </div>
-      </section>
-      <div class="grid grid-cols-1 md:grid-cols-3">
-        <div>Folge uns auf Instagram!</div>
-        <div>Folge uns auf YouTube!</div>
-        <div>Folge uns auf Twitch!</div>
+          <!--<div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal p-0">
+              <li><a>Item 1</a></li>
+              <li tabindex="0">
+                <a>
+                  Parent
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                </a>
+                <ul class="  p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>-->
+          <!--<div class="navbar-end">
+            <a class="btn">Get started</a>
+          </div>-->
+        </nav>
+        <header class="mb-12">
+          <section class="hero h-96" style="background-image: url(https://placeimg.com/1000/800/arch);">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button class="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </section>
+          <div class="grid grid-cols-1 md:grid-cols-3">
+            <div>Folge uns auf Instagram</div>
+            <div>Schaue uns auf YouTube</div>
+            <div>Tritt unserem Rudel auf Twitch bei</div>
+          </div>
+        </header>
+        <main class="bg-primary min-h-screen justify-center flex px-16 py-8">
+          <div class="card w-full md:w-2/3 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">Impressum</h2>
+              <p>Bla Bla</p>
+            </div>
+          </div>
+        </main>
+    </div>
+    <footer class="footer p-10 bg-base-100 text-base-content">
+      <div>
+        <img src="./src/assets/images/logo.svg" class="w-14" />
+        <p>Marla.ONE // seit 2022</p>
+      </div> 
+      <div>
+        <span class="footer-title">Socials</span> 
+        <a class="link link-hover">Instagram</a> 
+        <a class="link link-hover">YouTube</a> 
+        <a class="link link-hover">Twitch</a> 
+      </div> 
+      <div>
+        <span class="footer-title">Rechtliches</span> 
+        <a class="link link-hover">Impressum</a> 
       </div>
-    </header>
-    <main>
-    </main>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    </footer>
   </body>
 </html>
