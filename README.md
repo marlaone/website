@@ -46,19 +46,21 @@ Looks pretty over engineered at first, it probably is for the beginning, but I p
 
 Basic website that just shows the legal notice needed for german law.
 
-1. [ ] static http server
-2. [ ] markdown parser (for now just the legal notice)
-3. [ ] basic UI
+1. [x] static http server
+2. [x] markdown parser (for now just the legal notice)
+3. [x] basic UI
+4. [x] Dockerfile
 
 ### v1.0 - The Release
 
 Fetch social media videos/posts from my accounts and show them on the website.
 
-1. [ ] generate ent entities
-2. [ ] graphql api for ent entities
-3. [ ] fetch social media content from my channels and save it to the database
-4. [ ] build UI components
-5. [ ] show social media content in the UI
+1. [ ] asset management
+2. [ ] generate ent entities
+3. [ ] graphql api for ent entities
+4. [ ] fetch social media content from my channels and save it to the database
+5. [ ] build UI components
+6. [ ] show social media content in the UI
 
 ### v2.0 - The Upgrade
 

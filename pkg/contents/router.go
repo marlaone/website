@@ -1,11 +1,12 @@
 package contents
 
 import (
+	"html/template"
+	"net/http"
+
 	"github.com/marlaone/website/pkg/templates"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"html/template"
-	"net/http"
 )
 
 func Handler(logger *zap.Logger) http.Handler {
@@ -18,7 +19,14 @@ func Handler(logger *zap.Logger) http.Handler {
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		contentsPath, err := GetContentsPath(r.URL.Path)
+		urlPath := r.URL.Path
+
+		// @TODO remove on next release
+		if urlPath == "/" {
+			urlPath = "/impressum"
+		}
+
+		contentsPath, err := GetContentsPath(urlPath)
 		if _, ok := err.(*ContentNotFound); ok {
 			http.Error(w, "page not found", http.StatusNotFound)
 			return
