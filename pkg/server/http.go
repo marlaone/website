@@ -1,11 +1,12 @@
 package server
 
 import (
+	"net/http"
+	"time"
+
 	"github.com/marlaone/website/pkg/contents"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"net/http"
-	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -36,6 +37,7 @@ func (s *HttpServer) Serve() error {
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
 
+	r.Handle("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir("./web/dist"))))
 	r.Handle("/_marla/*", http.StripPrefix("/_marla/", http.FileServer(http.Dir("./web/dist"))))
 	r.Handle("/*", contents.Handler(s.logger))
 
