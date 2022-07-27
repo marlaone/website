@@ -61,6 +61,7 @@ Fetch social media videos/posts from my accounts and show them on the website.
 4. [ ] fetch social media content from my channels and save it to the database
 5. [ ] build UI components
 6. [ ] show social media content in the UI
+7. [ ] Markdown Parser Caching (contents package)
 
 ### v2.0 - The Upgrade
 

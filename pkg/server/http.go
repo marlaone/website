@@ -46,6 +46,9 @@ func (s *HttpServer) Serve() error {
 
 	gzipFileServer := http.HandlerFunc(cacheControlHandler)
 
+	if viper.GetString("app.env") == "debug" {
+		r.Mount("/debug", middleware.Profiler())
+	}
 	r.Handle("/public/*", http.StripPrefix("/public/", gzipFileServer))
 	r.Handle("/_marla/*", http.StripPrefix("/_marla/", gzipFileServer))
 	r.Handle("/*", contents.Handler(s.logger))
