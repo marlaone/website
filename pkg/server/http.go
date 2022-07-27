@@ -31,14 +31,23 @@ func (s *HttpServer) Serve() error {
 	r.Use(middleware.RealIP)
 	r.Use(NewLoggerMiddleware(s.logger, &LoggerOpts{WithReferer: true, WithUserAgent: true}))
 	r.Use(middleware.Recoverer)
-
+	r.Use(middleware.Compress(5, "gzip"))
 	// Set a timeout value on the request context (ctx), that will signal
 	// through ctx.Done() that the request has timed out and further
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
 
-	r.Handle("/public/*", http.StripPrefix("/public/", http.FileServer(http.Dir("./web/dist"))))
-	r.Handle("/_marla/*", http.StripPrefix("/_marla/", http.FileServer(http.Dir("./web/dist"))))
+	httpFileServer := http.FileServer(http.Dir("./web/dist"))
+
+	cacheControlHandler := func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Cache-Control", "max-age=31536000")
+		httpFileServer.ServeHTTP(w, r)
+	}
+
+	gzipFileServer := http.HandlerFunc(cacheControlHandler)
+
+	r.Handle("/public/*", http.StripPrefix("/public/", gzipFileServer))
+	r.Handle("/_marla/*", http.StripPrefix("/_marla/", gzipFileServer))
 	r.Handle("/*", contents.Handler(s.logger))
 
 	return http.ListenAndServe(":"+viper.GetString("http.port"), r)
