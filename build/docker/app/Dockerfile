@@ -16,7 +16,7 @@ RUN tar -C /usr/local -xzf /tmp/go1.18.4.linux-amd64.tar.gz
 
 ENV PATH="${PATH}:/usr/local/go/bin"
 
-RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt update -y
 RUN apt install nodejs -y
 
