@@ -44,13 +44,11 @@ func (s *HttpServer) Serve() error {
 		httpFileServer.ServeHTTP(w, r)
 	}
 
-	gzipFileServer := http.HandlerFunc(cacheControlHandler)
-
 	if viper.GetString("app.env") == "debug" {
 		r.Mount("/debug", middleware.Profiler())
 	}
-	r.Handle("/public/*", http.StripPrefix("/public/", gzipFileServer))
-	r.Handle("/_marla/*", http.StripPrefix("/_marla/", gzipFileServer))
+	r.Handle("/public/*", http.StripPrefix("/public/", http.HandlerFunc(cacheControlHandler)))
+	r.Handle("/_marla/*", http.StripPrefix("/_marla/", http.HandlerFunc(cacheControlHandler)))
 	r.Handle("/*", contents.Handler(s.logger))
 
 	return http.ListenAndServe(":"+viper.GetString("http.port"), r)

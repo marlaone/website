@@ -1,73 +1,15 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="marlaone">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit + TS</title>
-    <script type="module" src="/src/index.ts"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Solid App</title>
   </head>
-  <body class="bg-base-200">
-    <div class="bg-opacity-60 glass">
-        <nav class="navbar relative z-50 h-20">
-          <div class="navbar-start">
-            <a href="/" class="inline-flex align-middle justify-center items-center cursor-pointer p-4 font-monoglyceride normal-case text-xl">
-              <img src="./src/assets/images/logo.svg" class="h-12 mr-4" />
-              Marla.ONE
-            </a>
-          </div>
-        </nav>
-        <header class="mb-12">
-          <section class="hero h-96" style="background-image: url(../public/assets/images/SM-03.jpg);">
-            <div class="hero-overlay bg-opacity-60"></div>
-            <div class="hero-content text-center text-neutral-content">
-              <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button class="btn btn-primary">Get Started</button>
-              </div>
-            </div>
-          </section>
-          <h2 class="text-5xl uppercase my-16 text-center">Folge uns</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mb-16">
-            <a href="https://www.instagram.com/marla.one/" target="_blank" class="btn btn-secondary">
-              <i class="fa-brands fa-instagram text-2xl mr-4"></i>
-              Instagram
-            </a>
-            <a href="https://www.youtube.com/channel/UCVPdKKb08DTGFxFfO5SOPzA" target="_blank" class="btn bg-red-600 border-red-600 hover:bg-red-700 hover:border-red-700">
-              <i class="fa-brands fa-youtube text-2xl mr-4"></i>
-              YouTube
-            </a>
-            <a href="https://www.twitch.tv/marla_dev" target="_blank" class="btn bg-purple-600 border-purple-600 hover:bg-purple-700 hover:border-purple-700">
-              <i class="fa-brands fa-twitch text-2xl mr-4"></i>
-              Twitch
-            </a>
-          </div>
-        </header>
-        <main class="bg-primary min-h-screen justify-center flex px-16 py-8">
-          <div class="card w-full md:w-2/3 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-title">Impressum</h2>
-              <p>Bla Bla</p>
-            </div>
-          </div>
-        </main>
-    </div>
-    <footer class="footer p-10 bg-base-100 text-base-content">
-      <div>
-        <img src="./src/assets/images/logo.svg" class="w-14" />
-        <p>Marla.ONE // seit 2022</p>
-      </div> 
-      <div>
-        <span class="footer-title">Links</span> 
-        <a href="https://www.instagram.com/marla.one/" target="_blank" class="link link-hover">Instagram</a> 
-        <a href="https://www.youtube.com/channel/UCVPdKKb08DTGFxFfO5SOPzA" target="_blank" class="link link-hover">YouTube</a> 
-        <a href="https://www.twitch.tv/marla_dev" target="_blank" class="link link-hover">Twitch</a> 
-        <a href="https://github.com/marlaone/website" class="link link-hover" target="_blank">GitHub</a>
-      </div> 
-      <div>
-        <span class="footer-title">Rechtliches</span> 
-        <a href="/impressum" class="link link-hover">Impressum</a> 
-      </div>
-    </footer>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <marla-alert variant="alert-success">Alert</marla-alert>
+
+    <script src="/src/index.ts" type="module"></script>
   </body>
 </html>

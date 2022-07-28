@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Monoglyceride';
-  src: url('../fonts/monoglyceride/monodb_.ttf')  format('truetype'); /* Legacy iOS */
+  src: url('./assets/fonts/monoglyceride/monodb_.ttf')  format('truetype'); /* Legacy iOS */
 }
 
 .font-monoglyceride {
