@@ -1,9 +1,11 @@
 package templates
 
 import (
-	"github.com/kataras/blocks"
 	"html/template"
 	"io"
+
+	"github.com/kataras/blocks"
+	"github.com/marlaone/website/pkg/config"
 )
 
 type HTMLMeta struct {
@@ -28,8 +30,12 @@ type Templates struct {
 }
 
 func NewTemplates(viewsPath string) *Templates {
+	views := blocks.New(viewsPath)
+	if config.IsDebug() {
+		views.Reload(true)
+	}
 	return &Templates{
-		blocks: blocks.New(viewsPath),
+		blocks: views,
 	}
 }
 

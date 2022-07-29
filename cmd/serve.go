@@ -7,11 +7,13 @@ This code is owned by marla.one
 
 import (
 	"fmt"
+	"log"
+
+	"github.com/marlaone/website/pkg/config"
 	"github.com/marlaone/website/pkg/server"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"log"
 )
 
 // serveCmd represents the serve command
@@ -21,7 +23,7 @@ var serveCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		var logger *zap.Logger
-		if viper.GetString("app.env") == "debug" {
+		if config.IsDebug() {
 			logger, _ = zap.NewDevelopment()
 		} else {
 			logger, _ = zap.NewProduction()
@@ -40,9 +42,9 @@ var serveCmd = &cobra.Command{
 				"address",
 				fmt.Sprintf(
 					"%s://%s:%d",
-					viper.GetString("http.protocol"),
-					viper.GetString("http.host"),
-					viper.GetInt("http.port"),
+					viper.GetString(config.KeyHttpProtocol),
+					viper.GetString(config.KeyHttpHost),
+					viper.GetInt(config.KeyHttpPort),
 				),
 			),
 		)

@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"net/http"
 
+	"github.com/marlaone/website/pkg/config"
 	"github.com/marlaone/website/pkg/templates"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -11,7 +12,7 @@ import (
 
 func Handler(logger *zap.Logger) http.Handler {
 	parser := NewParser()
-	views := templates.NewTemplates(viper.GetString("app.views"))
+	views := templates.NewTemplates(viper.GetString(config.KeyAppViews))
 
 	if err := views.Load(); err != nil {
 		logger.Fatal("failed to load app views", zap.Error(err))

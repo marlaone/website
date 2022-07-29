@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/marlaone/website/pkg/config"
 	"github.com/marlaone/website/pkg/contents"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -39,17 +40,18 @@ func (s *HttpServer) Serve() error {
 
 	httpFileServer := http.FileServer(http.Dir("./web/dist"))
 
+	// @TODO refactor to a better place
 	cacheControlHandler := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Cache-Control", "max-age=31536000")
 		httpFileServer.ServeHTTP(w, r)
 	}
 
-	if viper.GetString("app.env") == "debug" {
+	if config.IsDebug() {
 		r.Mount("/debug", middleware.Profiler())
 	}
 	r.Handle("/public/*", http.StripPrefix("/public/", http.HandlerFunc(cacheControlHandler)))
 	r.Handle("/_marla/*", http.StripPrefix("/_marla/", http.HandlerFunc(cacheControlHandler)))
 	r.Handle("/*", contents.Handler(s.logger))
 
-	return http.ListenAndServe(":"+viper.GetString("http.port"), r)
+	return http.ListenAndServe(":"+viper.GetString(config.KeyHttpPort), r)
 }

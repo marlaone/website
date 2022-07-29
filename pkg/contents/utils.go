@@ -1,14 +1,16 @@
 package contents
 
 import (
-	"github.com/spf13/viper"
 	"os"
 	"path"
 	"strings"
+
+	"github.com/marlaone/website/pkg/config"
+	"github.com/spf13/viper"
 )
 
 func GetContentsPath(urlPath string) (string, error) {
-	contentsDirectory := viper.GetString("app.contents")
+	contentsDirectory := viper.GetString(config.KeyAppContents)
 
 	urlPath = strings.TrimSuffix(urlPath, "/")
 	p := path.Dir(urlPath)
