@@ -31,8 +31,8 @@ This is the codebase for my [Website](https://marla.one).
 
 ### Frontend
 
-- Web Components - used for dynamic content on the website
-  - [Lit](https://lit.dev/) - Web Components lib
+- Web Elements - used for dynamic content on the website
+  - [SolidJS](https://www.solidjs.com/) - Simple and performant reactivity for building user interfaces.
 - [Vitest](https://vitest.dev/) - B L A Z I N G _ F A S T unit test framework
 - [Vite](https://vitejs.dev/) lightning fast frontend tool (sadly not blazingly fast)
 - [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) - utility-first CSS framework
